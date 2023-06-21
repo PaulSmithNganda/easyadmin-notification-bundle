@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    PaulLab\NotificationBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity,Event,Resources,ValueObject}'
+
+    # Attach event listener to bundle's events
+    PaulLab\NotificationBundle\EventListener\NotificationEventListener:
+        tags:
+            - { name: kernel.event_listener, event: PaulLab\NotificationBundle\Event\NotificationEvent, method: 'onNotificationEvent' }
+            - { name: kernel.event_listener, event: easy_admin.post_show, method: 'onEasyAdminShow' }
+
+    PaulLab\NotificationBundle\Twig\:
+        resource: '../../Twig'
+        tags: [ 'twig.runtime', 'twig.extension' ]
+
+    PaulLab\NotificationBundle\Command\:
+        resource: '../../Command'
+        tags: [ 'console.command' ]

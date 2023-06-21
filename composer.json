@@ -1,0 +1,43 @@
+{
+    "name": "paul-lab/easyadmin-notification-bundle",
+    "description": "Symfony's Easyadmin simple notification's bundle",
+    "type": "symfony-bundle",
+    "require": {
+        "php": "^8.2.1",
+        "easycorp/easyadmin-bundle": "^4.6.6",
+        "marc-mabe/php-enum": "^4.7"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpro/grumphp": "^1.16.0",
+        "amphp/amp": "^2.6.2",
+        "squizlabs/php_codesniffer": "^3.7.2",
+        "phpmd/phpmd": "^2.13.0",
+        "phpstan/phpstan": "^1.10.20",
+        "phpunit/phpunit": "^10.2.2",
+        "vimeo/psalm": "^5.12.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Nganda",
+            "email": "paulngandasmith@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PaulLab\\NotificationBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\PaulLab\\NotificationBundle\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}
